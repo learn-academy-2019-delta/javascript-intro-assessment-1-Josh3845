@@ -34,19 +34,21 @@ function length (dog, cat) {
 
 console.log(length(myDog, myCat));
 // 2b. Create a function that takes in two arguments and returns an array containing the two variables. Expected output: ["Snoopy", "Garfield"]
-let pet = [myDog,myCat]
-console.log(pet)
+const array = (dog1,cat1) =>{
+    let pet = [dog1,cat1]
+    return pet
+
+}
+
+
+console.log(array(myDog,myCat))
 // 2c. Stretch: Write a function that returns the two variables in all lowercase letters.
-// function lower (dog1,cat1) {
-//     if(dog1 === "Snoopy"){
-//     return dog1.tolowerCase()
-// }else if (cat1 === "Garfield"){
-//     return cat1.tolowerCase()
-// }else{
-//     return "hi"
-// }
-// }
-// console.log(lower(myDog,myCat))
+ function lower (dog1,cat1) {
+     let pet1 = dog1.toLowerCase()
+     let pet2 = cat1.toLowerCase()
+     return `${pet1} ${pet2}`
+     return name
+     console.log(lower(myDog,myCat))
 
 // -----------------------------------------------
 // Consider this variable:
@@ -71,16 +73,35 @@ var testString = "thisisateststring"
 // 5a. Write a function that takes the variable as an argument and returns the string without vowels. Expected output: "thsstststrng"
 var  testString= "thisisateststring"
 let yup = testString.split("")
+var testString = "thisisateststring"
+//
+//  const noVowels = (str) =>{
+//      let yup = str.split('')
+//
+//      for(let i =0; i<yup.length;i++){
+//      if(yup[i] === "a" || yup[i] === "e" || yup[i] ==="i" || yup[i] === "o" || yup[i] === "u"){
+//          yup.splice(i,1);
+//          i--;
+//          return yup
+//      }
+//
+//     }
+//
+// }
+// console.log(noVowels(testString));
 
-function remo (sep){
-  for( let i =0 ; i < yup.length; i++)
-  const win = yup.length[i]
-  if(yup[i] === "a" || yup[i] === "e" || yup[i] ==="i" || yup[i] ===
-"o" ||yup[i] === "u"){
-return yup[i].join("")
-}
+remove = (str) => {
+  vowels = 'aeiou'
+  arr = []
+  for(let i = 0; i < str.length; i++) {
+    if(!vowels.includes(str[i])){
+      arr.push(str[i])
+    }
+  }
+  return arr.join('')
 }
 
+console.log(remove(testString));
 
     console.log(remo(yup))
 // 5b. Stretch: Update your function to return an error message if the variable is not a string. Copy and paste your function to add these changes.
@@ -92,28 +113,21 @@ return yup[i].join("")
 var toonimals = [ {name: "Itchy", animal: "mouse"}, {name: "Stimpy", animal: "cat"}, {name: "Daffy", animal: "duck"}, {name: "Scratchy", animal: "cat"}, {name: "Ren", animal: "dog"}, {name: "Felix", animal: "cat"}]
 
 // 6a. Write a function that takes in the toonimals array as an argument and returns an array with only the toon objects that are cats. Expected output: [ { name: "Stimpy", animal: "cat" }, { name: "Scratchy", animal: "cat" }, { name: "Felix", animal: "cat" } ]
-var toonimals = [ {name: "Itchy", animal: "mouse"}, {name: "Stimpy", animal: "cat"}, {name: "Daffy", animal: "duck"}, {name: "Scratchy", animal: "cat"}, {name: "Ren", animal: "dog"}, {name: "Felix", animal: "cat"}]
-cats =(...toonimals) => {
-  const {animal} = toonimals
-  for (let i = 0; i < toonimals.length; i++)
-var array = {}
-  if(animal === "cat"){
-    return array
-  }else{
-    return "hi"
-  }
-}
-console.log(cats(toonimals));
+let ifCat = (cats) => {
+     let arr = []
+     cats.forEach(function (toonimal){
+         if(toonimal.animal=="cat"){
+             arr.push(toonimal)
+         }
+     })
+
+     return arr
+ }
+console.log(ifCat(toonimals));
 //6b. Write a function that returns only the names of all the non-cats. Expected output: "Itchy" "Daffy" "Ren"
-var toonimals = [ {name: "Itchy", animal: "mouse"}, {name: "Stimpy", animal: "cat"}, {name: "Daffy", animal: "duck"}, {name: "Scratchy", animal: "cat"}, {name: "Ren", animal: "dog"}, {name: "Felix", animal: "cat"}]
-cats =(...toonimals) => {
-  const {animal} = toonimals
-  for (let i = 0; i < toonimals.length; i++)
-  if(animal!=== "cat"){
-    return array
-  }else{
-    return "hi"
-  }
-}
+
+let nonCats = toonimals.filter(value => value.animal !== "cat")
+console.log(nonCats);
+
 console.log(cats(toonimals));
 //6c. Stretch: Create a function that will print a sentence for every toon stating their name and their animal type. Use string interpolation. Expected output: "Itchy is a mouse" "Stimpy is a cat" "Daffy is a duck" "Scratchy is a cat" "Ren is a dog" "Felix is a cat"
